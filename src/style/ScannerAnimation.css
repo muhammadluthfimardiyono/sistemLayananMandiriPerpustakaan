@@ -1,0 +1,161 @@
+/* body {
+  height: 100vh;
+  position: relative;
+} */
+
+.scanner {
+  width: 100%;
+  height: 100%;
+  /* margin: 20px; */
+  outline-offset: 10px;
+  position: relative;
+  position: absolute;
+  /* left: 40%;
+  top: 40%; */
+}
+
+.scanner span::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  bottom: 0;
+  left: 4%;
+  width: 10px;
+  height: 90%;
+  background: #1841c8;
+  box-shadow: 0 0 50px 10px #3518c8;
+  clip-path: inset(0);
+  animation: x 1s ease-in-out infinite alternate, y 1s ease-in-out infinite;
+}
+
+.scanner p::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #18c89b;
+  position: relative;
+  right: 4px;
+}
+
+.scanner p {
+  color: #18c89b;
+  position: absolute;
+  bottom: -30px;
+  left: 38%;
+  font-size: 16px;
+  font-weight: 600;
+  animation: blinker 1s linear infinite;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.scanner:before,
+.scanner:after,
+.scanner em:after,
+.scanner em:before {
+  border-color: #3218c8;
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 46px;
+  border-style: solid;
+  border-width: 0px;
+}
+
+.scanner:before {
+  left: 0;
+  top: 0;
+  border-left-width: 5px;
+  border-top-width: 5px;
+  border-radius: 5px 0 0 0;
+}
+
+.scanner:after {
+  right: 0;
+  top: 0;
+  border-right-width: 5px;
+  border-top-width: 5px;
+  border-radius: 0 5px 0 0;
+}
+.scanner em:before {
+  left: 0;
+  bottom: 0;
+  border-left-width: 5px;
+  border-bottom-width: 5px;
+  border-radius: 0 0 0 5px;
+}
+.scanner em:after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  border-radius: 0 0 5px 0;
+}
+
+.container {
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.scan-animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* h3 {
+  text-align: center;
+  margin-top: 1rem;
+} */
+
+@keyframes move {
+  0%,
+  100% {
+    transform: translateY(190px);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  75% {
+    transform: translateY(160px);
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes x {
+  to {
+    transform: translateX(-100%);
+    left: 100%;
+  }
+}
+
+@keyframes y {
+  33% {
+    clip-path: inset(0 0 0 -100px);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  83% {
+    clip-path: inset(0 -100px 0 0);
+  }
+}
